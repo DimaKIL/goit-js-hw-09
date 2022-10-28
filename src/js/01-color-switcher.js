@@ -16,7 +16,7 @@ function onBtStartClick(){
     tim = setTimeout(() => {
         onBtStartClick();
          changeColor();
-    }, 2000);
+    }, 500);
 }
 
 function getRandomHexColor() {
