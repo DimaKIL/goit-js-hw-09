@@ -41,10 +41,10 @@ const baza = flatpickr('#datetime-picker', {
   function startTimer(){
    btStart.disabled = 'true';
     const dateNow = Date.now();
-    const userTime = calendar.selectedDates[0].getTime() - Date.now();
+    const userTime = baza.selectedDates[0].getTime() - Date.now();
     new FlipDown(
       Math.floor(
-        new Date(calendar.selectedDates[0] - oneSeconds).getTime() / 1000
+        new Date(baza.selectedDates[0] - oneSeconds).getTime() / 1000
       )
     ).start();
   
