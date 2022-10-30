@@ -2,15 +2,13 @@ import flatpickr from "flatpickr";
 
 import "flatpickr/dist/flatpickr.min.css";
 ////
+import FlipDown from 'flipdown-mp';
+import '../css/timer.css';
 import 'flatpickr/dist/flatpickr.min.css';
 import Notiflix from 'notiflix';
 
   const btStart = document.querySelector('[data-start]');
-  const btStop = document.querySelector('[data-stop]');
-  const days = document.querySelector('[data-days]');
-  const hours = document.querySelector('[data-hours]');
-  const minutes = document.querySelector('[darta-minutes]');
-  const seconds = document.querySelector('[data-seconds]');
+
 
 
 const baza = flatpickr('#datetime-picker', {
@@ -23,7 +21,6 @@ const baza = flatpickr('#datetime-picker', {
     },
   });
   btStart.addEventListener('click', startTimer);
-  btStop.addEventListener('click', stopTimer);
 
 
   function dateValidate(inputDate) {
@@ -55,16 +52,12 @@ const baza = flatpickr('#datetime-picker', {
         clearInterval(tim);
         return;
       }
-      updateClockFace(convertMs(userTime - deltaTime));
+      updateClockFace(convert(userTime - deltaTime));
     }, oneSeconds);
 
   }
 
-  function stopTimer(){
-    location.reload();
-  }
-
-  function convertMs(ms) {
+  function convert(ms) {
     const second = 1000;
     const minute = second * 60;
     const hour = minute * 60;
@@ -81,14 +74,6 @@ const baza = flatpickr('#datetime-picker', {
 
   function pad(value) {
     return String(value).padStart(2, '0');
-  }
-
-
-  function updateClockFace({ days, hours, minutes, seconds }) {
-    days.textContent = days;
-    hours.textContent = hours;
-    minutes.textContent = minutes;
-    seconds.textContent = seconds;
   }
 
 
