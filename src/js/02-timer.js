@@ -52,12 +52,12 @@ const baza = flatpickr('#datetime-picker', {
         clearInterval(tim);
         return;
       }
-      updateClockFace(convert(userTime - deltaTime));
+      updateClockFace(convertMs(userTime - deltaTime));
     }, oneSeconds);
 
   }
 
-  function convert(ms) {
+  function convertMs(ms) {
     const second = 1000;
     const minute = second * 60;
     const hour = minute * 60;
