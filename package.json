@@ -21,7 +21,8 @@
     "flatpickr": "^4.6.13",
     "from": "^0.1.7",
     "import": "^0.0.6",
-    "modern-normalize": "^1.1.0"
+    "modern-normalize": "^1.1.0",
+    "notiflix": "^3.2.5"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.0",
